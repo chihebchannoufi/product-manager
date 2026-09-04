@@ -39,7 +39,7 @@ const handleSubmit = () => {
         },
     ]" ;>
         <div class="p-4">
-            <Form @submit.prevent="handleSubmit" class="max-w-md space-y-6">
+            <form @submit.prevent="handleSubmit" class="max-w-md space-y-6">
                 <div class="flex flex-col gap-2">
                     <Label for="product-name" class="block">Product Name</Label>
                     <Input id="product-name" v-model="form.name" name="name" type="text"
@@ -59,7 +59,7 @@ const handleSubmit = () => {
                     <div v-if="form.errors.description" class="text-red-500 text-sm">{{ form.errors.description }}</div>
                 </div>
                 <Button type="submit" :disabled="form.processing">Edit Product</Button>
-            </Form>
+            </form>
         </div>
     </AppLayout>
 </template>

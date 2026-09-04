@@ -32,7 +32,7 @@ const page = usePage<{
 const handleDelete = (id: number) => {
     // Send a DELETE request to the server
     if (confirm('Are you sure you want to delete this product?')) {
-        router.delete(route('products.destroy', { id }))
+        router.delete(route('products.destroy', { product: id }))
     }
 }
     ;
@@ -85,7 +85,7 @@ const props = defineProps<Props>();
                         <TableCell>{{ product.price }}</TableCell>
                         <TableCell>{{ product.description }}</TableCell>
                         <TableCell class="text-center space-x-2">
-                            <Link :href="route('products.edit', { id: product.id })"><Button
+                            <Link :href="route('products.edit', { product: product.id })"><Button
                                     class="bg-slate-600">Edit</Button></Link>
                             <Button class="bg-red-500" @click="handleDelete(product.id)">Delete</Button>
                         </TableCell>
